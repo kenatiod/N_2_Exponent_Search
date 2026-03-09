@@ -1,0 +1,35 @@
+python3 N_2_Exponents_Search.py
+Searching through exponent envelope: 2^12 x 3^11 x 5^9 x 7^7 x 11^6 x 13^4 x 17^4 x 19^3 x 23^3 x 29^3 x 31^2 x 37^2 
+
+That gives maximum product = 13,206,885,574,898,201,304,929,890,902,170,948,868,771,967,464,000,000,000
+
+n = 1
+n = 2
+n = 3
+n = 8
+n = 5
+n = 15
+n = 9
+n = 80
+n = 24
+n = 14
+n = 20
+n = 35
+n = 224
+n = 125
+n = 4374
+n = 2400
+n = 384
+n = 440
+n = 539
+n = 3024
+n = 9800
+n = 2079
+n = 1715
+n = 123200
+n = 714
+n = 12375
+n = 194480
+n = 633555
+
+End of Program
