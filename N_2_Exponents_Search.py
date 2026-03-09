@@ -7,12 +7,15 @@ numbers from their greatest prime divisor down to 2 without gaps).
 The initial envelope from 2 to 37 are {12, 11, 9, 7, 6, 4, 4, 3, 3, 3, 2, 2}.
 This can be changed or extended as needed. Because we are using an array of
 prime number exponents that have no gaps, the numbers generated will
-always be prime-complete. 
+always be prime-complete. The test to see if that product of the prime
+divisors (raised to the envelope powers) is also a product of consecutive 
+integers, the integer square root is taken, and then multiplied by itself 
+plus one, and checked to see if that recovers the original product.
 
 by Ken Clements, Feb. 20, 2026
 """
 
-from math import sqrt
+from math import isqrt
 
 primes = [0] + [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 
         47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103]
@@ -48,16 +51,21 @@ def check_exponents():
     while omega < len(prime_exponents) and prime_exponents[omega] > 0:
         N *= primes[omega] ** prime_exponents[omega]
         omega += 1
-    n = int(sqrt(N))
+    n = isqrt(N)
     if N == n * (n + 1):
         return n
     else:
         return 0   
-    
+
+exponents_tested = 0
+found_n_values = 0
 while increment_exponents():
+    exponents_tested += 1
     result = check_exponents()
     if result > 0:
         print(f"n = {result}")
+        found_n_values += 1
 
+print(f"\nOut of {exponents_tested:,} exponents tested, {found_n_values} values of n were found where n(n+1) is prime-complete.")
 print(f"\nEnd of Program")
 
